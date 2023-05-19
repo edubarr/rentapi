@@ -8,7 +8,7 @@ class ImportCategoryController {
   handler(req: Request, res: Response): Response {
     const { file } = req;
     if (file) {
-      this.importCategoryUseCase.execute(file);
+      this.importCategoryUseCase.execute(file).catch(console.error);
       return res.send();
     }
     return res.send();
